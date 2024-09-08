@@ -14,4 +14,6 @@ inputs:
   dist-folder:
     description: 'The folder to deploy to the S3 bucket'
     required: true
-  
+outputs:
+  website-url:
+    description: 'The URL of the deployed website'

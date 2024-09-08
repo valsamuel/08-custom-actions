@@ -19,6 +19,8 @@ function run() {
   const s3Url = `s3://${bucket}`;
   exec.exec(`aws s3 sync ${distFolder} ${s3Url}  --region ${bucketRegion}`);
 
-  core.notice(`Deploying to bucket: ${bucket}`);
+  const webUrl = `http://${bucket}.s3-website-${bucketRegion}.amazonaws.com`;
+
+  core.setOutput("website-url", webUrl);
 }
 run();

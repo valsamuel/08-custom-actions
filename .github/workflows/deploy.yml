@@ -71,3 +71,6 @@ jobs:
           bucket-name: ${{ secrets.BUCKET_NAME }}
           bucket-region: ${{ secrets.BUCKET_REGION }}
           dist-folder: ./dist
+      - name: Output website URL
+        run: |
+          echo "Website URL: ${{ steps.deploy.outputs.website-url }}"
